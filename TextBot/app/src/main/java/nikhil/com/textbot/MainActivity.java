@@ -6,6 +6,7 @@ import android.content.Context;
 import android.location.Location;
 import android.location.*;
 //import a
+import android.os.PowerManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,6 +44,14 @@ public class MainActivity extends Activity {
         here = true;
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 1);
+
+        // wakelock
+        PowerManager pm;
+        PowerManager.WakeLock wakeLock;
+
+        pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "why you up swapnanil");
+        wakeLock.acquire();
 
 
 //        locationManager.
