@@ -30,7 +30,8 @@ public class MainActivity extends Activity {
 
     boolean here;
 
-
+    String PHONE_NUMBER = "***********";
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +77,7 @@ public class MainActivity extends Activity {
 
         while (here) {
 
-            manager.sendTextMessage("7327427351", null, "NOT HERE", null, null);
+            manager.sendTextMessage(PHONE_NUMBER, null, "NOT HERE", null, null);
 
             try {
                 Thread.sleep(5000);
